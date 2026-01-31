@@ -14,8 +14,9 @@ In the outer loop's body, define the inner for loop to iterate through each colu
 num_rows = int(input())
 num_columns = int(input())
 
-""" Your solution goes here """
-
+for current_row in range(1,num_rows + 1):
+    current_column_letter = 'A'
+    for current_column in range(1, num_columns + 1):
         # Inner for loop statements
         print(f'{current_row}{current_column_letter}', end=' ')
         current_column_letter = chr(ord(current_column_letter) + 1)  # Used to increment letters
