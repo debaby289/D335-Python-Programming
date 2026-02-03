@@ -1,4 +1,6 @@
 name: Auto Daily Commit
+permissions:
+  contents: write
 
 on:
   schedule:
@@ -9,16 +11,19 @@ on:
 jobs:
   commit:
     runs-on: ubuntu-latest
+    env:
+      BRANCH: ${{ github.ref_name }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true
 
       - name: Automate daily commit
         run: |
-          # Create/update a file with a timestamp
-          echo "Last update: $(date)" >> update.txt
-          git config --global user.email "simsdevine@gmail.com"
-          git config --global user.name "debaby289"
+          echo "Last update: $(date -u)" >> update.txt
+          git config user.email "simsdevine@gmail.com"
+          git config user.name "debaby289"
           git add update.txt
-          git commit -m "Automated daily commit: $(date)" || echo "No changes to commit"
-          git push
+          git commit -m "Automated daily commit: $(date -u)" || echo "No changes to commit"
+          git push origin "HEAD:${BRANCH}"
