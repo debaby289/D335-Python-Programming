@@ -17,8 +17,8 @@ jobs:
         run: |
           # Create/update a file with a timestamp
           echo "Last update: $(date)" >> update.txt
-          git config --global simsdevine@gmail.com
-          git config --global debaby289
+          git config --global user.email "simsdevine@gmail.com"
+          git config --global user.name "debaby289"
           git add update.txt
           git commit -m "Automated daily commit: $(date)" || echo "No changes to commit"
           git push
