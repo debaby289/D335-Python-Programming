@@ -1,17 +1,14 @@
-import math
+def swap_values(a,b,c,d):
+    return b,a,d,c
 
-def find_base_area(rad):
-    area = math.pi * math.pow(rad,rad)
-    return area
 
-def find_volume(rad,height):
-    volume = find_base_area(rad) * height * (1/3)
-    return volume
+if __name__ == '__main__': 
+    # Type your code here. Your code must call the function.
 
-cone_radius = float(input())
-cone_height = float(input())
+    a = int(input())
+    b = int(input())
+    c = int(input())
+    d = int(input())
 
-print(f'Cone radius: {cone_radius}')
-print(f'Cone height: {cone_height}')
-print(f'Base area: {find_base_area(cone_radius):.1f}')
-print(f'Volume: {find_volume(cone_radius, cone_height):.1f}')
+    a,b,c,d = swap_values(a,b,c,d)
+    print(a,b,c,d)
