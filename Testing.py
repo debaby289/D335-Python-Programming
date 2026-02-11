@@ -1,9 +1,6 @@
-score = 9
-print(f'{score:0>4}')
-print(f'{score:0<4}')
-print(f'{score:0^4}')
+num_salads = int(input())
+ingredient_lists = []
+for row_index in range(num_salads):
+    ingredient_lists.append(input().split())
 
-score = 18
-print(f'{score:0>4}')
-print(f'{score:0<4}')
-print(f'{score:0^4}')
+
