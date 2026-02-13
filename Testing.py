@@ -1,17 +1,15 @@
-
-# "New" means new compared to previous level
-provincial_capitals = {
-    'Ontario': 'Toronto',
-    'Manitoba': 'Winnipeg',
-    'BC': 'Victoria',
-    'Alberta': 'Edmonton'
+color_dict = {
+    'red': 0,
+    'green': 0,
+    'blue': 128
 }
 
-province_name = input()
-while province_name != 'exit':
-    if province_name in provincial_capitals:
-        print(provincial_capitals[province_name])
-        del provincial_capitals[province_name] # New line
-    else:
-        print('x')
-    province_name = input()
+key_read = input()
+value_read = input()
+
+color_dict[key_read] = value_read
+
+print(f'red: {color_dict["red"]}')
+print(f'green: {color_dict["green"]}')
+print(f'blue: {color_dict["blue"]}')
+print(f'{key_read}: {color_dict[key_read]}')
