@@ -58,31 +58,56 @@ else:
 
 '''
 Level 3
-Integer num_salads is read from input, representing the number of rows of data remaining in the input. Two-dimensional list ingredient_lists consists of data read from the remaining input, with each row representing the ingredients of a fruit salad. For each row of ingredient_lists:
-    Output 'Ingredients in salad ', the row index plus 1, and ':' on one line.
-    Output all the elements in the row on the next line, ending each element with a space.
+Integer num_lines is read from input, representing the number of rows of data remaining in the input. Two-dimensional list data_2d consists of data read from the remaining input. Output each row of numbers in data_2d on one line, ending each number with a space.
 
 Click here for example
 Ex: If the input is:
 3
-cherry berry lemon
-peach pineapple
-mango quince grape apple
-
+27 16 19
+46 75
+61 28 15 23
 then the output is:
-Ingredients in salad 1:
-cherry berry lemon 
-Ingredients in salad 2:
-peach pineapple 
-Ingredients in salad 3:
-mango quince grape apple 
-
-Note:
-    enumerate() returns the index and the value of the list element in the current iteration.
-    print(x, end=' ') outputs x and ends with a space instead of a default newline.
+27 16 19 
+46 75 
+61 28 15 23 
 '''
+num_lines = int(input())
+data_2d = []
+for row_index in range(num_lines):
+    row_elements = []
+    for x in input().split():
+        row_elements.append(int(x))
+    data_2d.append(row_elements)
+
+for row in data_2d:
+    for element in row:
+        print(element, end=' ')
+    print()
 
 '''
 Level 4
+Integer grid_size is read from input, representing the number of rows and columns of a two-dimensional list. Two-dimensional list pattern_grid is created with zeros, 0, as the initial values. For each element at row index m and column index n of pattern_grid, assign the element with the value of m minus n.
 
+Click here for example
+Ex: If the input is 3, then the output is:
+0 -1 -2 
+1 0 -1 
+2 1 0 
 '''
+grid_size = int(input())
+
+pattern_grid = []
+for m in range(grid_size):
+    row = []
+    for n in range(grid_size):
+        row.append(0)
+    pattern_grid.append(row)
+
+for m in range(grid_size):
+    for n in range(grid_size):
+        pattern_grid[m][n] = m - n
+
+for row in pattern_grid:
+    for cell in row:
+        print(cell, end=' ')
+    print()

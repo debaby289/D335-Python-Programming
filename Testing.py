@@ -1,6 +1,17 @@
-num_salads = int(input())
-ingredient_lists = []
-for row_index in range(num_salads):
-    ingredient_lists.append(input().split())
 
+# "New" means new compared to previous level
+provincial_capitals = {
+    'Ontario': 'Toronto',
+    'Manitoba': 'Winnipeg',
+    'BC': 'Victoria',
+    'Alberta': 'Edmonton'
+}
 
+province_name = input()
+while province_name != 'exit':
+    if province_name in provincial_capitals:
+        print(provincial_capitals[province_name])
+        del provincial_capitals[province_name] # New line
+    else:
+        print('x')
+    province_name = input()
