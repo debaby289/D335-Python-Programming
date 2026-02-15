@@ -1,15 +1,7 @@
-color_dict = {
-    'red': 0,
-    'green': 0,
-    'blue': 128
-}
+#create a dictionary
+contacts_added = {}
 
-key_read = input()
-value_read = input()
-
-color_dict[key_read] = value_read
-
-print(f'red: {color_dict["red"]}')
-print(f'green: {color_dict["green"]}')
-print(f'blue: {color_dict["blue"]}')
-print(f'{key_read}: {color_dict[key_read]}')
+contacts = input()
+for con in contacts:
+    print(con)
+    contacts = input()
