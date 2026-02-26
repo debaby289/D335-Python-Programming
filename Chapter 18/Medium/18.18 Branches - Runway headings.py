@@ -8,3 +8,42 @@ Hints:
     Don't forget that ranges use &. An expression detecting a value x is between 1 and 10 is (x > 1) & (x < 10).
     Because the input is an integer which is multiplied by 10 to yield runway_deg, the comparisons with floating-point values like 22.5 will never result in equality. Hence, the ranges don't have to account for such quality.
 '''
+north = 0
+northeast = 45
+east = 90
+southeast = 135
+south = 180
+southwest = 225
+west = 270
+northwest = 315
+
+#Input
+runway_deg = int(input()) * 10
+
+# Directional checks
+#North
+if (runway_deg > 360 - 22.5) or (runway_deg <= 0 + 22.5):
+    direction = 'north'
+elif (runway_deg > 45 - 22.5) and (runway_deg <= 45 + 22.5):
+    direction = 'northeast'
+
+#East
+elif (runway_deg > 90 - 22.5) and (runway_deg <= 90 + 22.5):
+    direction = 'east'
+
+#South
+elif (runway_deg > 135 - 22.5) and (runway_deg <= 135 + 22.5):
+    direction = 'southeast'
+elif (runway_deg > 180 - 22.5) and (runway_deg <= 180 + 22.5):
+    direction = 'south'
+elif (runway_deg > 225 - 22.5) and (runway_deg <= 225 + 22.5):
+    direction = 'southwest'
+
+#West
+elif (runway_deg > 270 - 22.5) and (runway_deg <= 270 + 22.5):
+    direction = 'west'
+else:
+    direction = 'northwest'
+
+#Output
+print(f'{runway_deg} degrees ({direction}).')
