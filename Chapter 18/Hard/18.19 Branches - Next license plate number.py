@@ -23,3 +23,34 @@ Steps:
     With the process mentioned above, 6 separate if-else statements are needed.
 '''
 plate_number = input()
+
+#List for string changes
+characters = list(plate_number)
+
+#Increment conditional
+carry_on = True
+
+#Backwards loop
+for i in range(len(plate_number) - 1,-1,-1):
+    if carry_on == True:
+        #Check for num
+        if characters[i].isdigit():
+            if characters[i] == '9':
+                characters[i] = '0'
+                carry_on = True
+            else:
+                characters[i] = str(int(characters[i])+ 1)
+                carry_on = False
+
+        #String check
+        else:
+            if characters[i] == 'Z':
+                characters[i] = 'A'
+                carry_on = True
+            else:
+                characters[i] = chr(ord(characters[i]) +1)
+                carry_on = True
+    if carry_on == False:
+        break
+plate = ''.join(characters)
+print(plate)
