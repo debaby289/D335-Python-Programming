@@ -23,8 +23,29 @@ Hints:
 
     Assume the list size will always be accurate. Ex. 4 60 63 68 61 59 will not be possible.
 '''
+import math
 
-list_size = int(input())
+#Grab numbers size
+numbers_size = int(input())
 
-for list in range(list_size):
+#Empty numbers
+numbers = []
+
+# Retrieve numbers values
+for i in range(numbers_size):
+    numbers.append(int(input()))
+
+#Initial
+max_diff = 0
+
+#Check numbers values
+for i in range(1,len(numbers)):
+    prev_num = numbers[i-1]
+    curr_num = numbers[i]
+
+    diff_temp = abs(prev_num - curr_num)
+
+    if diff_temp > max_diff:
+        max_diff = diff_temp
     
+print(max_diff)
