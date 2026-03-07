@@ -19,3 +19,22 @@ Ex: If the input is:
 the output is:
     free
 '''
+time = input()
+age = int(input())
+
+if age < 4:
+    price = 'free'
+elif time == 'day':
+    price = 8
+elif time == 'night':
+    if 4 <= age <= 16:
+        price = 12
+    elif 17 <= age <= 54:
+        price = 15
+    else:  
+        price = 13
+
+if price == 'free':
+    print(price)
+else:
+    print(f'${price}')
