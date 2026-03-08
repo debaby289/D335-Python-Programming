@@ -25,3 +25,15 @@ Ex: If the input is:
 the output is:
     not close
 '''
+num1 = float(input())
+num2 = float(input())
+epsilon = float(input())
+
+difference = abs(num1 - num2)
+
+if difference < 0.001:
+    print('equal')
+elif difference < epsilon:
+    print('close enough')
+else:
+    print('not close')
