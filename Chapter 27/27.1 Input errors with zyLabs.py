@@ -24,9 +24,27 @@ the system raises the EOFError and outputs:
     0 input(s) read:
     No max
 '''
-def max_value(num1,num2,num3):
-    largest_number = max(num1,num2,num3)
-    return largest_number
+count = 0
+max_val = None
 
-if __name__ == '__main__':
-    print('1')
+try:
+    num1 = int(input())
+    count += 1
+    max_val = num1
+
+    num2 = int(input())
+    count += 1
+    max_val = max(max_val, num2)
+
+    num3 = int(input())
+    count += 1
+    max_val = max(max_val, num3)
+
+    print(max_val)
+
+except EOFError:
+    print(f"{count} input(s) read:")
+    if count == 0:
+        print("No max")
+    else:
+        print(f"Max is {max_val}")
