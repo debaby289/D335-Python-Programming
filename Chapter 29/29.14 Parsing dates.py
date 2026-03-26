@@ -4,16 +4,15 @@ Write a program to read dates from input, one date per line. Each date's format 
 Hint: Use string[start:end] to get a substring when parsing the string and extracting the date. Use the split() method to break the input into tokens.
 
 Ex: If the input is:
+    March 1, 1990
+    April 2 1995
+    7/15/20
+    December 13, 2003
+    -1
 
-March 1, 1990
-April 2 1995
-7/15/20
-December 13, 2003
--1
 then the output is:
-
-3/1/1990
-12/13/2003
+    3/1/1990
+    12/13/2003
 '''
 def get_month_as_int(monthString):
 
@@ -77,6 +76,9 @@ if __name__ == '__main__':
         month = get_month_as_int(month_str)
 
         if month == 0:
+            continue
+
+        if not year_str.isdigit():
             continue
 
         print(f"{month}/{int(day)}/{year_str}")
